@@ -2,6 +2,7 @@ package game
 
 import (
 	"flag"
+
 	"github.com/xiaonanln/pktconn"
 
 	"math/rand"
@@ -22,7 +23,8 @@ import (
 
 	"context"
 
-	"github.com/xiaonanln/goworld/components/game/lbc"
+	"github.com/xiaonanln/goworld/cmd/goworld_package"
+	gamelbc "github.com/xiaonanln/goworld/components/game/lbc"
 	"github.com/xiaonanln/goworld/engine/binutil"
 	"github.com/xiaonanln/goworld/engine/common"
 	"github.com/xiaonanln/goworld/engine/config"
@@ -65,6 +67,8 @@ func parseArgs() {
 func Run() {
 	rand.Seed(time.Now().UnixNano())
 	parseArgs()
+
+	goworld_package.DetectGoWorldPath()
 
 	if runInDaemonMode {
 		daemoncontext := binutil.Daemonize()

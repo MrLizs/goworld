@@ -28,7 +28,7 @@ examples/*/*.sh
 *.dat
 vendor/
 .idea.bak/
-.vscode/
+# .vscode/
 tests/
 /components/dispatcher/dispatcher
 /components/gate/gate

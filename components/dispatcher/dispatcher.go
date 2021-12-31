@@ -17,6 +17,8 @@ import (
 	"github.com/xiaonanln/goworld/engine/consts"
 	"github.com/xiaonanln/goworld/engine/gwlog"
 	"github.com/xiaonanln/goworld/engine/post"
+
+	"github.com/xiaonanln/goworld/cmd/goworld_package"
 )
 
 var (
@@ -48,6 +50,8 @@ func main() {
 		daemoncontext := binutil.Daemonize()
 		defer daemoncontext.Release()
 	}
+
+	goworld_package.DetectGoWorldPath()
 
 	setupGCPercent()
 

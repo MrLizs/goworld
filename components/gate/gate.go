@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+
 	"github.com/xiaonanln/pktconn"
 
 	"math/rand"
@@ -28,6 +29,8 @@ import (
 	"github.com/xiaonanln/goworld/engine/dispatchercluster/dispatcherclient"
 	"github.com/xiaonanln/goworld/engine/gwlog"
 	"github.com/xiaonanln/goworld/engine/post"
+
+	"github.com/xiaonanln/goworld/cmd/goworld_package"
 )
 
 var (
@@ -56,6 +59,8 @@ func parseArgs() {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 	parseArgs()
+
+	goworld_package.DetectGoWorldPath()
 
 	if args.runInDaemonMode {
 		daemoncontext := binutil.Daemonize()
